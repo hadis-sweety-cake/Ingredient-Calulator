@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ingredient Calulator | @Hadis.swetty.cake</title>
+		<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+		<link rel="stylesheet" href="./static/css/style.css">
+		<link rel="icon" href="./static/image/favicon.ico" type="image/x-icon">
+	</head>
+	<body onload="clearInputs()">
+		
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<a href="https://instagram.com/hadis.sweety.cake/"><img src="./static/image/logo.jpg"></a>
+					<p class="info">محاسبه گر قیمت انواع کیک و شیرینی، برای شروع برروی 'افزودن' کلیک کنید.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-lg-1 col-md-1 d-none d-md-block">
+				
+				</div>
+				<div class="col col-lg-10 .d-block content overflow-auto">
+					<div class="row settingMenu" id="settingMenu">
+						<div class="col">
+							<div class="row">
+								<img class="settingCloseButton" src="./static/image/x-button.png" onclick="settingCloseButton()" data-toggle="tooltip" title="بستن">
+							</div>	
+							<div class="row settingContent">
+								<div class="col-4">
+									هزینه آب و برق و گاز و...
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="additionalCostsSetting" aria-describedby="basic-addon1">
+									</div>
+								</div>
+								<div class="col-4">
+									قیمت چند برابر بشود 
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="ratioSetting" aria-describedby="basic-addon1">
+									</div>
+								</div>
+								<div class="col-4">
+									وزن شیرینی (گرم)
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="netWeightSetting" aria-describedby="basic-addon1">
+									</div>
+								</div>
+							</div>	
+							<div class="row">
+								<div class='rowAdder'>
+									<button onclick="submitSetting()" type="button" class="btn btn-danger">اعمال</button>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<table class="table table-borderless">
+						<thead>
+							<tr>
+								<th scope="col">قیمت محصول</th>
+								<th scope="col">وزن محصول (گرم)</th>
+								<th scope="col">مقدار استفاده شده (گرم)</th>
+								<th scope="col">قیمت</th>
+								<th scope="col">حذف</th>
+							</tr>
+						</thead>
+						<tbody id = "tbody">
+							<tr id = 'dataInput' class="dataInput">
+								<td>
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="price" aria-describedby="basic-addon1">
+									</div>
+								</td>
+								<td>
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="weight" aria-describedby="basic-addon1">
+									</div>
+								</td>
+								<td>
+									<div class="input-group mb-3">
+										<input type="text" class="form-control" id="used" aria-describedby="basic-addon1">
+									</div>
+								</td>
+								<td>
+									<div class="input-group mb-3">
+									</div>
+								</td>
+								<td>
+									<div class="input-group mb-3">
+										<img class="deleteAllButton" onclick="deleteAllRows()" src="./static/image/x-button.png" data-toggle="tooltip" title="حذف همه">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class='rowAdder container calculatorRow' id="calculatorRow">
+						<div class="row">
+							<div class="col-2">
+								<img class="settingButton" src="./static/image/settings.png" onclick="openSettingMenu()" data-toggle="tooltip" title="تنظیمات">
+							</div>
+							<div class="col-3" id="netPrice">
+								قیمت کل:
+							</div>
+							<div class="col-4" id="netWeight">
+								مقدار هر کیلو:
+							</div>
+							<div class="col-3" id="products">
+								تعداد مواد: 
+							</div>
+						</div>
+					</div>
+					<div class='rowAdder'>
+						<button onclick="addRow()" type="button" class="btn btn-outline-light addButton">افزودن +</button>
+					</div>
+				</div>
+				<div class="col col-lg-1 col-md-1 d-none d-md-block">
+				
+				</div>
+			</div>
+
+			<div class="footer">
+				<img width="25px" height="25px" src="./static/image/instagram.png">
+				<a target="_blank" href="https://instagram.com/hadis.sweety.cake/">@hadis.sweety.cake</a>
+				<p class="aboutus">Designed By <a href="https://t.me/MohammadMD_kh" target="_blank">MohammadKhalaj</a></p>
+			</div>
+		</div>
+
+		<script src="./static/js/bootstrap.min.js"></script>
+		<script src="./static/js/script.js"></script>
+	</body>
+</html>
